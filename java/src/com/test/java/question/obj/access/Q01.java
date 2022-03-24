@@ -1,4 +1,4 @@
-package com.test.java.questino.obj.access;
+package com.test.java.question.obj.access;
 
 public class Q01 {
 
