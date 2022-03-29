@@ -120,7 +120,7 @@ class Pen {
 	public Pen(String model, String color) {
 		this.model = model;
 		this.color = color;
-		Pen.count++;
+		Pen.count++; //초기화(X) -> 증가 업무 코드
 	}
 	
 	public String dump() {
