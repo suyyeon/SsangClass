@@ -46,11 +46,38 @@ public class Ex52_Generic {
 		System.out.println(n1.getData() * 2);
 		System.out.println();
 		
+		WrapperObject n2 = new WrapperObject(20); //범용(만능) > 사용 + 다운캐스팅
+		System.out.println(n2.toString());
+		System.out.println((int)n2.getData() * 2);
+		System.out.println();
+		
+		Wrapper<Integer> n3 = new Wrapper<Integer>(30); //범용(만능) > 사용 + 바로 사용가능
+		System.out.println(n3.toString());
+		System.out.println(n3.getData() * 2);
+		
+		
+		System.out.println();
+		System.out.println();
+		
+		
+		
 		
 		
 		WrapperString s1 = new WrapperString("홍길동");
 		System.out.println(s1.toString());
 		System.out.println(s1.getData().length());
+		System.out.println();
+		
+		WrapperObject s2 = new WrapperObject("아무개");
+		System.out.println(s2.toString());
+		System.out.println(((String)s2.getData()).length());
+		System.out.println();
+		
+		Wrapper<String> s3 = new Wrapper<String>("테스트");
+		System.out.println(s3.toString());
+		System.out.println(s3.getData().length()); //범용 클래스 역할 + 전용 클래스 사용법 
+		
+		System.out.println();
 		System.out.println();
 		
 		
@@ -60,7 +87,15 @@ public class Ex52_Generic {
 		System.out.println(b1.getData() ? "참" : "거짓");
 		System.out.println();
 		
-		
+		WrapperObject b2 = new WrapperObject(false);
+		System.out.println(b2.toString());
+		System.out.println((boolean)b2.getData() ? "참" : "거짓");
+		System.out.println();
+	
+		Wrapper<Boolean> b3 = new Wrapper<Boolean>(true);
+		System.out.println(b3.toString());
+		System.out.println(b3.getData() ? "참" : "거짓");
+		System.out.println();
 		
 		
 		
@@ -147,10 +182,54 @@ class WrapperBoolean {
 
 
 
+class WrapperObject {
+	
+	private Object data; //클래스의 중심이 되는 데이터!!!
+	
+	public WrapperObject(Object data) {
+		this.data = data;
+	}
+
+	public Object getData() {
+		return data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
+	}
+
+	@Override
+	public String toString() {
+		return "data=" + data;
+	}
+	
+}
 
 
 
+class Wrapper<T> {
+	
+	private T data; //클래스의 중심이 되는 데이터!!!
+	
+	public Wrapper(T data) {
+		this.data = data;
+	}
 
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
+	
+	@Override
+	public String toString() {
+	
+		return "data=" + this.data;
+	}	
+	
+}
 
 
 
