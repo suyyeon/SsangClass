@@ -11,24 +11,24 @@ select name, capital from tblcountry;
 -- 아래와 같이 가져오시오
 -- [국가명]    [수도명]   [인구수]   [면적]    [대륙] <- 컬럼명
 -- 대한민국   서울        4403       101       AS     <- 데이터
-select name as 국가명, capital as 수도명, population as 인구수, area as 면적, continent as 대륙 from tblcountry;
+select name as "[국가명]", capital as "[수도명]", population as "[인구수]", area as "[면적]", continent as "[대륙]" from tblcountry;
 
 
 --요구사항.004.tblCountry
 --아래와 같이 가져오시오
 -- [국가정보] <- 컬럼명
 -- 국가명: 대한민국, 수도명: 서울, 인구수: 4403   <- 데이터
-select '국가명: ' || name || ', 수도명:' || capital || ', 인구수: ' || population as 국가정보 from tblcountry;
+select '국가명: ' || name || ', 수도명:' || capital || ', 인구수: ' || population as "[국가정보]" from tblcountry;
 
 --요구사항.005
 --아래와 같이 가져오시오.employees
 -- [이름]                 [이메일]                 [연락처]            [급여]
 -- Steven King	        SKING@gmail.com	515.123.4567	   $24000
-select first_name || ' ' || last_name as 이름, email || '@gmail.com' as 이메일, phone_number as 연락처, '$' || salary as 급여 from employees;
+select first_name || ' ' || last_name as "[이름]", email || '@gmail.com' as "[이메일]", phone_number as "[연락처]", '$' || salary as "[급여]" from employees;
 
 --요구사항.006.tblCountry
 --면적(area)이 100이하인 국가의 이름과 면적을 가져오시오.
-select * from tblcountry where area <= 100;
+select name, area from tblcountry where area <= 100;
 
 --요구사항.007.tblCountry
 --아시아와 유럽 대륙에 속한 나라를 가져오시오. 
@@ -37,12 +37,12 @@ select * from tblcountry where continent in('AS','EU');
 
 --요구사항.008.employees
 --직업(job_id)이 프로그래머(it_prog)인 직원의 이름(풀네임)과 연락처 가져오시오.
-SELECT first_name, last_name, phone_number from employees WHERE job_id = 'IT_PROG';
+SELECT first_name || ' ' || last_name, phone_number from employees WHERE job_id = 'IT_PROG';
 
 
 --요구사항.009.employees
 --last_name이 'Grant'인 직원의 이름, 연락처, 고용날짜를 가져오시오.
-select first_name, last_name, phone_number,hire_date from employees where last_name = 'Grant';
+select first_name || ' ' || last_name, phone_number, hire_date from employees where last_name = 'Grant';
 
 
 
@@ -53,7 +53,7 @@ select first_name, last_name, salary, phone_number from employees where manager_
 
 --요구사항.011.employees
 --특정 부서(60, 80, 100)에 속한 직원들의 이름, 연락처, 이메일, 부서ID 가져오시오.
-select first_name, last_name, phone_number, email ,employee_id from employees where department_id in('60','80','100');
+select first_name || ' ' || last_name, phone_number, email ,employee_id from employees where department_id in(60,80,100);
 
 --요구사항.012.tblInsa
 --기획부 직원들 가져오시오.
@@ -61,7 +61,7 @@ select * from tblInsa where buseo = '기획부';
 
 --요구사항.013.tblInsa
 --서울에 있는 직원들 중 직위가 부장인 사람의 이름, 직위, 전화번호 가져오시오.
-select name, jikwi, tel from tblinsa where jikwi = '부장';
+select name, jikwi, tel from tblinsa where city = '서울' and jikwi = '부장';
 
 
 --요구사항.014.tblInsa
@@ -99,7 +99,7 @@ select * from employees where job_id like 'SA%';
 
 --요구사항.020.employees
 --first_name에 'de'가 들어간 직원들 가져오시오.
-select * from employees where first_name like '%de%';
+select * from employees where first_name like '%de%' or first_name like '%De%' or first_name like '%DE%' or first_name like '%dE%';
 
 
 --요구사항.021.tblInsa
@@ -114,7 +114,7 @@ select * from tblInsa where ssn like '%-2%';
 
 --요구사항.023.tblInsa
 --여름에(7,8,9월) 태어난 직원들 가져오시오.
-select * from tblInsa where ssn like '__07%' or ssn like '__08%' or ssn like '__09%';
+select * from tblInsa where ssn like '__07%-%' or ssn like '__08%-%' or ssn like '__09%-%';
 
 
 --요구사항.024.tblInsa
