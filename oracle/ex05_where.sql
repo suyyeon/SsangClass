@@ -220,15 +220,47 @@ select * from 도서정보 where 제목 like '%SQL%';
     - null 상수 제공
     - 보통의 언어에서는 null값은 연산의 대상이 될 수 없다.(***)    
     
+    null 조건
+    - where절 사용
+    - 컬럼명 is null
+    
 */
 select * from tblCountry;
 
 -- 인구수가 미기재된 나라는?
 select * from tblCountry where population = null;
-
+ 
 -- if (pop == null) { }
 
+select * from tblCountry where population is null;
 
+-- 인구수가 기재된 나라는?
+select * from tblCountry where population <> null;
+select * from tblCountry where not population is null;
+select * from tblCountry where population is not null; --** 더 많이 사용(가독성)
+
+-- 연락처가 없는 직원?
+select * from tblInsa where tel is null;
+select * from tblInsa where tel is not null;
+
+
+
+select * from tblTodo;
+
+-- 아직 실행하지 않은 할일?
+select * from tblTodo where completedate is null;
+
+-- 한일?
+select * from tblTodo where completedate is not null;
+
+
+
+-- 도서관 > 대여 테이블(속성..... 대여날짜, 반납날짜)
+-- 아직 반납을 안한 사람은?
+select * from 도서대여 where 반납날짜 is null;
+
+-- 반납이 완료된 대여 기록?
+select * from 도서대여 where 반납날짜 is not null;
 
 
 
