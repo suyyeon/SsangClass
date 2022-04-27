@@ -200,14 +200,4 @@ from employees e
                         having count(e.department_id) < 10
                             order by avg(e.salary);
                             
-                
-SELECT l.city as "도시명" ,avg(e.salary) as "평균급여",count(*) as "사원수" FROM HR.employees e
-    inner join HR.departments d
-     on e.department_id = d.department_id
-      inner join HR.locations l
-       on d.location_id = l.location_id
-         GROUP BY l.city 
-            HAVING count(*) < 10
-            ORDER BY avg(e.salary) asc;                
- 
-                            
+                       
