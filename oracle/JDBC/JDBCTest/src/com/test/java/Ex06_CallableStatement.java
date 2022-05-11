@@ -65,7 +65,7 @@ public class Ex06_CallableStatement {
 			rs.close();
 			stat.close();
 			conn.close();
-			
+						
 			
 		} catch (Exception e) {
 			e.printStackTrace();

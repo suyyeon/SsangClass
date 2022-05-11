@@ -238,10 +238,23 @@ begin
                 on i.num = b.num
                     where buseo = pbuseo;
     
-
 end procM6;
 
-
+declare
+    vname varchar2(30);
+    vbonus number;
+    vcursor sys_refcursor;
+begin
+    procM6('기획부', vcursor);
+    
+    loop
+        fetch vcursor into vname, vbonus;
+        exit when vcursor%notfound;
+        
+        dbms_output.put_line(vname || ' > ' || vbonus);
+    end loop;
+    
+end;
 
 
 
