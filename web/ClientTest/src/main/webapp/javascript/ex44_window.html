@@ -97,6 +97,36 @@
         }
 
 
+        console.clear();
+
+
+
+
+        var num1 = 10; //변수(X) > 프로퍼티(O)
+
+        //변수 > 생성(O) > 소멸(X) + 생명주기(Scope)
+
+        delete window.num1;
+
+        console.log(window.num1);
+
+
+
+
+
+        const employee = {
+            name: '홍길동',
+            age: 20
+        };
+
+        employee.address = '서울시';
+        employee['tel'] = '010-1234-5678';
+
+        //프로퍼티 삭제
+        delete employee.age;
+
+        console.log(employee);
+
 
 
     </script>
