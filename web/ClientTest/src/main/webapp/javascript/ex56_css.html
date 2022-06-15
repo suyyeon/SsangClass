@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu {
+            /* border: 1px solid black; */
+            display: flex;
+            width: 630px;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            margin: 0 auto;
+
+            transform: translate(0px, -100px);
+        }
+
+        #menu img {
+            transition: .5s all;
+        }
+
+        main {
+            width: 800px;
+            margin: 100px auto;
+        }
+
+    </style>
+
+    <script>
+
+        // const item = document.getElementById('menu').children;
+        // alert(item);
+
+
+        //<body onload="">
+        //- <body> 태그가 브라우저에 의해서 실행되고 난 직후
+        function init() {
+            const item = document.getElementById('menu').children;
+            alert(item);
+        }
+
+        //window.onload = function() {};
+        //window.document.onload = function() {};
+        //window.document.body.onload = function() {};
+
+
+        let olditem = null;
+
+        window.onload = function() {
+
+            const item = document.getElementById('menu').children;
+
+            for (let i=0; i<item.length; i++) {
+
+                item[i].onclick = function(event) {
+
+                    if (olditem != null) { //누군가 열려있다면?
+                        olditem.style.transform = 'translate(0px, 0px)';
+                    }
+
+                    if (event.target != olditem) {
+                        event.target.style.transform = 'translate(0px, 90px)';
+                        olditem = event.target;
+                    } else {
+                        event.target.style.transform = 'translate(0px, 0px)';
+                        olditem = null;
+                    }
+
+                };
+
+            }
+            
+        };
+
+    </script>
+
+</head>
+<!-- <body onload="init();"> -->
+<body>
+    <!-- ex56_css.html -->
+
+    <nav id="menu">
+        <img src="images/rect_icon01.png">
+        <img src="images/rect_icon02.png">
+        <img src="images/rect_icon03.png">
+        <img src="images/rect_icon04.png">
+        <img src="images/rect_icon05.png">
+    </nav>
+
+    <main>
+        <h1>Title</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tenetur quas repellendus incidunt eos? Nam pariatur, ipsum illo odio fugiat incidunt nemo, molestias harum reprehenderit magnam cupiditate, impedit asperiores maiores!
+        </p>
+        <p>
+            Voluptatem quo non nihil enim dolore quasi quae error delectus. Consequuntur iure sequi sapiente amet veniam optio cum excepturi quaerat aut laudantium magni deserunt, consectetur delectus tempora illo omnis. Sequi.
+        </p>
+        <p>
+            Optio porro distinctio nulla suscipit voluptatem assumenda dolorem amet tempora incidunt esse iure nemo, voluptatum corporis mollitia, fugiat numquam consequuntur dolores! Ex qui iusto molestias voluptates fugit est, rerum saepe?
+        </p>
+        <p>
+            Molestias autem nostrum culpa, asperiores tempora modi accusamus atque quia eveniet distinctio vel deleniti expedita? Perferendis, veniam libero laboriosam vero quos molestiae delectus modi porro ut consectetur? Possimus, quia consequuntur!
+        </p>
+        <p>
+            Fugit ipsam natus, possimus temporibus alias quisquam dolores optio adipisci, rem pariatur, inventore impedit hic omnis quidem repellendus eveniet modi. Consequatur suscipit repellat sed voluptate saepe fuga asperiores, hic at?
+        </p>
+        <p>
+            Sed nihil dolores perspiciatis aperiam nobis iusto deserunt ex eius voluptate, labore iste rerum sit, quam fuga fugit voluptatibus. Cumque maiores velit enim, rerum neque autem ipsum sit illo suscipit?
+        </p>
+        <p>
+            Doloremque deserunt quo possimus natus ipsa tenetur. Doloribus placeat officiis accusamus vero molestias assumenda dicta perferendis eligendi aliquam, quaerat minus eos totam distinctio exercitationem quasi error a vitae asperiores sequi?
+        </p>
+        <p>
+            Repellat eveniet impedit quisquam ea cupiditate at odio consequuntur molestiae alias maxime cum sequi nesciunt veritatis, cumque magnam aliquam nam natus recusandae doloremque totam quidem voluptatum eos? Sequi, laborum nihil.
+        </p>
+        <p>
+            Accusamus earum, fugit mollitia rerum odio perferendis sit et? Atque inventore soluta impedit cumque autem accusamus unde ratione exercitationem veniam. Enim debitis quos libero numquam possimus nesciunt, rem tempora nisi.
+        </p>
+        <p>
+            Provident, quod ducimus! Ipsum voluptas eius, ipsam similique consequatur et culpa aliquid quidem, impedit debitis accusantium deserunt labore libero at optio eum voluptatem accusamus! Doloribus amet incidunt nesciunt distinctio quidem.
+        </p>
+    </main>
+
+
+    
+</body>
+</html>
