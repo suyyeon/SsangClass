@@ -14,7 +14,6 @@
 
     <input type="button" value="확인" id="btn" name="btn">
     <hr>
-    <!-- div#box$.box{상자$}*5 -->
     <div id="box1" class="box">상자1</div>
     <div id="box2" class="box">상자2</div>
     <div id="box3" class="box">상자3</div>
@@ -32,7 +31,7 @@
             2. BOM or DOM 객체를 jQuery 객체로 변환한다.
             3. jQuery() 함수의 결과는 jQuery 객체(= 항상 집합)
             4. 반환된 jQuery 객체에 메소드를 적용하면.. 자동으로 루프가 동작되면서 요소마다 적용이 된다.
-        
+            
         */
 
         const btn = document.getElementById('btn');
@@ -46,23 +45,20 @@
                 list[i].style.color = 'blue';
             }
 
-            // 이건 불가능
-            // document.getElementsByClassName('box').forEach(box => console.log(box));
+            //document.getElementsByClassName('box').forEach(box => box.style.color = 'blue');
 
-            // document.querySelector(CSS 선택자)
-            // document.querySelectorAll(CSS 선택자)
+            //document.querySelector(CSS 선택자)
+            //document.querySelectorAll(CSS 선택자)
 
             document.querySelector('#box1').style.color = 'red';
             document.querySelector('div').style.color = 'yellow';
 
-            //for문을 쓰지않아도 이렇게 간단히 된다. get메서드보단 SelectorAll더편함
             document.querySelectorAll('.box').forEach(box => box.style.color = 'orange');
 
 
             //jQuery > CSS 선택자 지원
             //- jQuery 함수의 실행 결과는 jQuery 객체이다.
-            
-            // 실행안됨..(-)
+
             //태그 선택자
             jQuery('div').css('color', 'green');
 
@@ -75,35 +71,45 @@
             //CSS 모든 선택자 지원!!
             jQuery('div:nth-child(even)').css('font-weight', 'bold');
 
-            const a = document.all.bth; //BOM
+
+
+
+            const a = document.all.btn; //BOM
             const b = document.getElementById('btn'); //DOM
             const c = jQuery('#btn'); //jQuery
+
 
             //a.조작
             //b.조작
             //c.조작
 
-            // alert(a === b);
-            // alert(a == c);
-            // alert(b == c);
+            //alert(a === b);
+            //alert(a == c);
+            //alert(b == c);
 
-            // jQuery('#btn').value = 'Check';
-            // document.getElementById('btn').css('color', 'blue');
+            //jQuery('#btn').value = 'Check';
+            //document.getElementById('btn').css('color', 'blue');
+            
 
-
-            //                          DOM.BOM
+            //                         DOM.BOM
             //document.getElementById('btn').value = 'aa'
             //document.all.btn.setAttribute('value', 'aaa');
 
 
-            //형변환 자주쓰진 않음
+
+
             //BOM/DOM 객체 -> (형변환) -> jQuery
-            jQuery(document.getElementById('btn')).css('color','blue');
+            jQuery(document.getElementById('btn')).css('color', 'blue');
+
 
             //jQuery -> (형변환) -> BOM/DOM 객체
             jQuery('#btn')[0].value = 'Check';
 
+
+
+
         });
+
 
     </script>
 
