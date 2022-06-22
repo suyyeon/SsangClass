@@ -17,9 +17,12 @@
 	<h1>JSP 페이지</h1>
 	<p>문단입니다.</p>
 	
+	
 	<%
 		//여기는 자바 영역입니다(= 자바 클래스 영역, 서블릿 영역과 동일)
 		Calendar now = Calendar.getInstance();
+	
+		System.out.println(pageContext.getRequest() == request);
 	
 	%>
 	
