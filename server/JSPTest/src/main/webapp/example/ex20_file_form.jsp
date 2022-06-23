@@ -193,12 +193,12 @@
 		
 		function deleteImage(img) {
 			//alert(img);
-			
-			event.cancelBubble = false;
-			
+						
 			if (confirm('delete?')) { 
 				location.href = 'ex20_file_delete.jsp?filename=' + img;
 			}
+			
+			event.stopPropagation();
 			
 		}
 	
