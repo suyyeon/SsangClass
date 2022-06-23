@@ -227,15 +227,19 @@ session
 - webapp > example > "files" 폴더 생성
 
 
-파일 업로드
+단일 파일 업로드
 - ex18_file_form.jsp
 - ex18_file_ok.jsp
 
 
+다중 파일 업로드
+- ex19_file_form.jsp
+- ex19_file_ok.jsp
 
 
-
-
+파일 업로드
+- ex20_file_form.jsp
+- ex20_file_ok.jsp
 
 
 
