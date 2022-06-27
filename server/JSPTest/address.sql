@@ -18,6 +18,23 @@ create sequence seqAddress;
 select * from tblAddress;
 
 
+--주소록 쓰기
+insert into tblAddress (seq, name, age, address, gender, tel)
+        values (seqAddress.nextval, '홍길동', 20, '서울시 강남구 역삼동', 'm', '010-1234-5678');
+        
+        
+--주소록 일기
+select * from tblAddress order by name asc;
+
+
+-- 주소록 수정하기
+update tblAddress set name = '아무개', age = 22, address = '서울시 강동구 둔촌동', gender = 'f', tel = '010-9876-5432'
+    where seq = 1;
+    
+
+-- 주소록 삭제하기
+delete from tblAddress where seq = 1;
+
 
 
 

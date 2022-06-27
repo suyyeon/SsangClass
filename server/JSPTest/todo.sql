@@ -11,7 +11,7 @@ create table tblTodo (
 
 create sequence seqTodo;
 
-
+select * from tblTodo;
 
 
 
