@@ -170,8 +170,31 @@ public class DAO {
 		
 		return false;
 	}
+
+
+	//DelOk 서블릿이 seq을 줄테니까 삭제해주세요~
+	public int del(String seq) {
+		
+		try {
+			
+			String sql = "delete from tblMemo where seq = ?";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, seq);
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("DAO.del");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
 	
 }
+
+
 
 
 
