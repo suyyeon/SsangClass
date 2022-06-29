@@ -36,7 +36,10 @@
 			<div class="btns">
 				<input type="button" value="돌아가기" class="btn btn-secondary"
 					onclick="location.href='/toy/index.do';">
-				<input type="submit" value="글쓰기" class="btn btn-primary">
+				<button class="btn btn-primary">
+					<i class="fas fa-pen"></i>
+					쓰기
+				</button>
 			</div>
 			
 			</form>

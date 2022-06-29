@@ -35,8 +35,11 @@
 			
 			<hr>
 			
-			<input type="button" value="탈퇴하기" class="btn btn-danger"
+			<button class="btn btn-danger"
 				onclick="location.href='/toy/member/unregister.do';">
+				<i class="fas fa-sign-out-alt"></i>
+				탈퇴하기
+			</button>
 			
 			
 		</section>

@@ -27,8 +27,12 @@
 			<div class="btns">
 				<input type="button" value="돌아가기" class="btn btn-secondary"
 					onclick="location.href='/toy/index.do';">
-				<input type="button" value="탈퇴하기" class="btn btn-primary"
+				
+				<button class="btn btn-danger"
 					onclick="location.href='/toy/member/unregisterok.do';">
+					<i class="fas fa-sign-out-alt"></i>
+					탈퇴하기
+				</button>
 			</div>
 			
 		</section>

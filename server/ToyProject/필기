@@ -19,7 +19,7 @@ DB 설계
 - "com.test.toy" 			> 메인
 - "com.test.toy.board" 		> 게시판
 - "com.test.toy.member"		> 회원
-- "com.test.toy.etc"		> 부가 기능
+- "com.test.toy.etc"		> 부가 기능x`
 
 
 폴더 구조
@@ -126,11 +126,37 @@ DB 설계
 			    > "delok.jsp"
 
 			    
-                     
+                    
+-------------------------------------------------- CRUD
+
+
+
+검색
+
+댓글쓰기
+
+- com.test.toy.board > "AddCommentOk.java"
+			         > "CommentDTO.java"
 
 
 
 
+
+페이징
+
+답변쓰기
+
+파일업로드
+
+태그(#)
+
+싫어요/좋아요
+
+
+
+
+
+		
 
 
 

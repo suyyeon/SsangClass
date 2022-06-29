@@ -34,7 +34,10 @@
 			<div class="btns">
 				<input type="button" value="돌아가기" class="btn btn-secondary"
 					onclick="history.back();">
-				<input type="submit" value="로그인" class="btn btn-primary">
+				<button class="btn btn-primary">
+					<i class="fas fa-sign-in-alt"></i>
+					로그인
+				</button>
 			</div>
 			</form>
 			
@@ -63,6 +66,12 @@
 				<input type="hidden" name="id" value="hoho">
 				<input type="hidden" name="pw" value="1111">
 				<input type="submit" value="호호호(hoho)" class="btn btn-success">
+			</form>
+			&nbsp;
+			<form method="POST" action="/toy/member/loginok.do">
+				<input type="hidden" name="id" value="lee">
+				<input type="hidden" name="pw" value="1111">
+				<input type="submit" value="이순신(lee)" class="btn btn-success">
 			</form>
 			</div>
 			

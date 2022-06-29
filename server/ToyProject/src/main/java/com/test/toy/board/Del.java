@@ -16,7 +16,16 @@ public class Del extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		//Del.java
+		//1. 데이터 가져오기(seq)
+		//2. JSP 호출하기
+
 		
+		//1.
+		String seq = req.getParameter("seq");
+		
+		
+		//2.
+		req.setAttribute("seq", seq);
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/board/del.jsp");
 		dispatcher.forward(req, resp);

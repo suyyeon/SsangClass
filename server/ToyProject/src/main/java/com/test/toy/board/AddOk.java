@@ -41,7 +41,14 @@ public class AddOk extends HttpServlet {
 		
 		BoardDAO dao = new BoardDAO();
 		
-		int result = dao.add(dto);
+		
+		
+		
+		int result = 0;
+		
+		if (session.getAttribute("auth") != null) {
+			result = dao.add(dto);
+		}
 		
 		
 		//4.
