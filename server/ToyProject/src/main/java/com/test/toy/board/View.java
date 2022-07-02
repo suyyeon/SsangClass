@@ -1,8 +1,11 @@
 package com.test.toy.board;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -61,7 +64,11 @@ public class View extends HttpServlet {
 		dto.setContent(dto.getContent().replace("\r\n", "<br>"));
 		
 		
+		//http://localhost:8090/toy/board/view.do?seq=3&isSearch=n&column=&word=
+		//http://localhost:8090/toy/board/view.do?seq=3
+		
 		//- 검색어 표시하기
+		//if (isSearch != null && column != null && isSearch.equals("y") && column.equals("content")) {
 		if (isSearch.equals("y") && column.equals("content")) {
 			
 			//안녕하세요. 홍길동입니다.
@@ -71,6 +78,33 @@ public class View extends HttpServlet {
 			
 		}
 		
+		//첨부파일이 이미지 > 내용과 함께 출력하기
+		
+		if (dto.getFilename() != null
+				&& (dto.getFilename().toLowerCase().endsWith(".jpg")
+					|| dto.getFilename().toLowerCase().endsWith(".jpeg")
+					|| dto.getFilename().toLowerCase().endsWith(".gif")
+					|| dto.getFilename().toLowerCase().endsWith(".png"))) {
+			
+			//이미지 정보 획득
+			BufferedImage img = ImageIO.read(new File(req.getRealPath("files") + "\\" + dto.getFilename()));
+			
+			//System.out.println(img.getWidth());
+			//System.out.println(img.getHeight());
+			
+			String temp = "";
+			
+			if (img.getWidth() > 630) {
+				temp = "style='width:630px;'";
+			}
+			
+			
+			dto.setContent(dto.getContent() 
+				
+//						+ String.format("<div style='margin-top:15px;'><img src='/toy/files/%s' id='imgAttach' style='display:none;'></div>" 											, dto.getFilename()));
+						+ String.format("<div style='margin-top:15px;'><img src='/toy/files/%s' id='imgAttach' %s></div>", dto.getFilename(), temp));
+		
+		}
 		
 		
 		
@@ -79,6 +113,9 @@ public class View extends HttpServlet {
 		//3.7 댓글 목록 가져오기
 		ArrayList<CommentDTO> clist = dao.listComment(seq);
 		
+		for (CommentDTO cdto : clist) {
+			cdto.setContent(cdto.getContent().replace("\r\n", "<br>"));
+		}
 		
 		
 		
