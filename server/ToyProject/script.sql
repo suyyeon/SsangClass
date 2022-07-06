@@ -372,9 +372,9 @@ select * from tblResearch;
 
 update tblResearch set
     cnt1 = 10,
-    cnt2 = 15,
-    cnt3 = 3,
-    cnt4 = 7
+    cnt2 = 17,
+    cnt3 = 5,
+    cnt4 = 10
 where seq = 1;
 
 
@@ -384,6 +384,12 @@ commit;
 
 
 
+select * from tblBoard;
+
+select * from tblInsa;
+
+
+select * from tblAddress;
 
 
 
