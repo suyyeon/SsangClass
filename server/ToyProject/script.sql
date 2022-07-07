@@ -398,4 +398,59 @@ select * from tblAddress;
 
 
 
+-- Ajax + Draggable
+create table tblDraggable(
+
+    id varchar2(30) primary key,            --태그id(PK)
+    left number not null,                   --x좌표
+    top number not null                     --y좌표
+
+);
+
+insert into tblDraggable (id, left, top) values ('cat01', 0, 0);
+insert into tblDraggable (id, left, top) values ('cat02', 0, 0);
+insert into tblDraggable (id, left, top) values ('cat03', 0, 0);
+
+commit;
+
+select * from tblDraggable;
+
+
+
+
+
+-- 크롤링. 네이버 영화
+create table tblMovie (
+
+    seq number primary key,             --번호(PK)
+    title varchar2(200) not null,       --제목
+    category varchar2(200) not null,    --개요
+    time number not null,               --상영시간
+    rdate varchar2(10) not null,        --개봉일
+    director varchar2(100) not null,    --감독
+    actor varchar2(200) null,           --배우
+    poster varchar2(300) not null       --포스터
+);
+
+create sequence seqMovie;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
