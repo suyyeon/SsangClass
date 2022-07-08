@@ -435,7 +435,7 @@ create table tblMovie (
 create sequence seqMovie;
 
 
-
+select * from tblMovie;
 
 
 
