@@ -35,10 +35,13 @@
 	<c:forEach items="${list}" var="dto">
 		<div>${dto.seq} ${dto.item} ${dto.price} ${dto.regdate}</div>
 	</c:forEach>
+	
+	<hr>
+	
+	<div>count: ${count}</div>
 
 </body>
 </html>
-
 
 
 

@@ -129,6 +129,45 @@ public class MyBatisController {
 		
 		return "result";
 	}
+	
+	
+	@GetMapping(value="/m9")
+	public String m9(Model model, String table) {
+		
+		//select count(*) from 테이블;
+		
+		int count = service.m9(table);
+		
+		model.addAttribute("count", count);		
+		
+		return "result";
+	}
+	
+	
+	@GetMapping(value="/m10")
+	public String m10(Model model, String word) {
+		
+		List<MyBatisDTO> list = service.m10(word);
+		
+		model.addAttribute("list", list);
+		
+		return "result";
+	}
+	
+	
+	@GetMapping(value="/m11")
+	public String m11(Model model, String type) {
+		
+		//employees + type
+		//1. first_name
+		//2. last_name
+		
+		List<String> nlist = service.m11(type);
+		
+		model.addAttribute("nlist", nlist);
+		
+		return "result";
+	}
 
 	
 	/*

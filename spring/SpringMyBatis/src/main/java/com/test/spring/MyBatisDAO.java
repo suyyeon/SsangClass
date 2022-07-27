@@ -21,4 +21,10 @@ public interface MyBatisDAO {
 	List<String> m7();
 
 	List<MyBatisDTO> m8();
+
+	int m9(String table);
+
+	List<MyBatisDTO> m10(String word);
+
+	List<String> m11(String type);
 }

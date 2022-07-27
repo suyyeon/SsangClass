@@ -95,7 +95,27 @@ public class MyBatisDAOImpl implements MyBatisDAO {
 	
 		return template.selectList("test.m8");
 	}
+	
+	@Override
+	public int m9(String table) {
+		
+		return template.selectOne("test.m9", table);
+	}
+	
+	@Override
+	public List<MyBatisDTO> m10(String word) {
+	
+		return template.selectList("test.m10", word);
+	}
+	
+	@Override
+	public List<String> m11(String type) {
+	
+		return template.selectList("test.m11", type);
+	}
 }
+
+
 
 
 

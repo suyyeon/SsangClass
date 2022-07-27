@@ -68,6 +68,25 @@ public class MyBatisServiceImpl implements MyBatisService {
 	
 		return dao.m8();
 	}
+	
+	@Override
+	public int m9(String table) {
+		
+		return dao.m9(table);
+	}
+	
+	@Override
+	public List<MyBatisDTO> m10(String word) {
+	
+		return dao.m10(word);
+	}
+	
+	@Override
+	public List<String> m11(String type) {
+		
+		return dao.m11(type);
+	}
+	
 }
 
 

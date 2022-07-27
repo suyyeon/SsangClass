@@ -30,7 +30,7 @@
 	</delete>
 	
 	
-	<insert id="m4" parameterType="com.test.spring.MyBatisDTO">
+	<insert id="m4" parameterType="dto">
 		insert into tblMyBatis (seq, item, price, regdate) 
 				values (seqMyBatis.nextVal, #{item}, #{price}, default)
 	</insert>
@@ -41,7 +41,7 @@
 	</select>
 	
 	
-	<select id="m6" parameterType="String" resultType="com.test.spring.MyBatisDTO">
+	<select id="m6" parameterType="String" resultType="dto">
 		select * from tblMyBatis where seq = #{seq}
 	</select>
 	
@@ -54,8 +54,43 @@
 	</select>
 	
 	
-	<select id="m8" resultType="com.test.spring.MyBatisDTO">
+	<select id="m8" resultType="dto">
 		select * from tblMyBatis
+	</select>
+	
+	
+	<select id="m9" parameterType="String" resultType="Integer">
+		select count(*) from ${table}
+	</select>
+	
+	
+	<select id="m10" parameterType="String" resultType="dto">
+		select * from tblMyBatis where item like '%' || #{word} || '%'
+		                    <!-- where item like '%${word}%' -->
+	</select>
+	
+	
+	<select id="m11" parameterType="String" resultType="String">
+	
+		<!-- 
+		<if test="type == 1">
+		select first_name from employees order by 1
+		</if>
+		
+		<if test="type == 2">
+		select last_name from employees order by 1
+		</if> 
+		-->
+		
+		select
+		 	<if test="type == 1">
+			first_name
+			</if>
+			<if test="type == 2">
+			last_name
+			</if> 
+		from employees order by 1
+	
 	</select>
    
 </mapper>
