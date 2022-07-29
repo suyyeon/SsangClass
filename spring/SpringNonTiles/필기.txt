@@ -1,0 +1,88 @@
+
+
+레이아웃
+
+
+
+새 프로젝트 생성
+	- Spring MVC Project > “SpringNonTiles” > “com.test.spring”
+
+1. pom.xml
+
+	- <java-version>1.11</java-version>
+	- <org.springframework-version>5.0.7.RELEASE</org.springframework-version>
+	- <version>3.5.1</version>
+	- <source>1.11</source>
+	- <target>1.11</target>
+	- Project Facets > Java > 11
+	
+
+2. 파일 생성하기
+
+	- com.test.spring > “MainController.java”
+
+	- webapp > resources > “css” > “main.css”
+
+	- views > “inc” > “asset.jsp”
+	          inc > “mainmenu.jsp”
+	          inc > “submenu_member.jsp”
+	          inc > “submenu_admin.jsp”
+	          
+	- views > “member” > “info.jsp”
+	                   > “point.jsp”
+	                   
+	- views > “admin” > “chart.jsp”
+	                  > “preference.jsp”	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
