@@ -1,0 +1,62 @@
+
+새 프로젝트 생성하기
+- Spring MVC Project > "SpringAOP" > "com.test.spring"
+
+
+파일 생성하기
+- com.test.spring > "AOPController.java"
+		          > "AOPService.java" (I)
+		          > "AOPServiceImpl.java"
+		          > "Cross.java"
+
+- views > "test.jsp"
+        > "list.jsp"
+        > "add.jsp"
+        > "addok.jsp"
+        > "del.jsp"
+        > "delok.jsp"
+
+
+
+Spring MVC + AOP(어노테이션) 설정
+
+1. pom.xml
+	- <java-version>1.11</java-version>
+	- <org.springframework-version>5.0.7.RELEASE</org.springframework-version>
+	- <version>3.5.1</version>
+	- <source>1.11</source>
+	- <target>1.11</target>
+	- Project Facets > Java > 11
+
+2. servlet-context.xml
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+                  
