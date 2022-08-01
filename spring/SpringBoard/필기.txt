@@ -1,0 +1,82 @@
+
+
+게시판(MVC + MyBatis + Tiles + AOP)
+- 목록 //로그
+- 보기 //로그
+- 쓰기 //회원 전용 + 로그
+
+
+새 프로젝트 생성
+- Spring MVC Project > "SpringBoard" > "com.test.spring"
+
+1. pom.xml
+	- <java-version>1.11</java-version>
+	- <org.springframework-version>5.0.7.RELEASE</org.springframework-version>
+	- <version>3.5.1</version>
+	- <source>1.11</source>
+	- <target>1.11</target>
+	- Project Facets > Java > 11
+	
+	- <dependency> 추가
+
+2. web.xml
+	- 인코딩 필터
+
+3. root-context.xml
+	- MyBatis 설정 > mapper + mybatis + log4j
+
+4. servlet-context.xml
+	- Tiles 설정
+	- AOP 설정
+		
+
+파일 생성하기
+- com.test.spring > "BoardController.java"
+                  > "BoardService.java" (I)
+                  > "BoardServiceImpl.java"
+                  > "BoardDAO.java" (I)
+                  > "BoardDAOImpl.java"
+                  > "BoardDTO.java"
+                  
+                  > "Logger.java"
+                  > "Check.java"
+
+
+					 레이아웃 페이지
+- views > "layout" > "board.jsp"
+
+					메인 조각 페이지
+- views > "board" > "list.jsp"        
+		 		  > "add.jsp"
+		 		  > "view.jsp"
+
+				   조각 페이지		 		            
+- views > "inc" > "header.jsp"
+                > "asset.jsp"
+
+- webapp > resources > css, js, fonts 복사                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
