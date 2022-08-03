@@ -1,7 +1,10 @@
 package com.test.java;
 
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.apache.catalina.tribes.util.Arrays;
 
 public class Ex01_RegEx {
 
@@ -231,9 +234,112 @@ public class Ex01_RegEx {
 		
 		//m1();
 		//m2();
-		m3();
+		//m3();
+		//m4();
+		m5();
 		
 	}//main
+
+	private static void m5() {
+		
+		//정규식을 지원하는 자바 메소드
+		//- String 클래스 제공
+		
+		
+		//완전 일치 검사
+		String txt = "22세";
+		System.out.println(txt.matches("[0-9]{2,3}"));
+		
+		
+		//String names = "홍길동,아무개,,하하하;호호호,,,후후후";
+		//String[] result = names.split("[,;]+");
+		
+		String names = "홍길동 아무개  하하하       호호호 후후후";
+		String[] result = names.split("\\s+");
+		
+		for (String name : result) {
+			System.out.println(name);
+		}
+		
+		
+		
+		//개인정보 마스킹
+		String line = "안녕하세요. 제 연락처는 010-5145-2874입니다. 연락이 안되면 010-1234-5678로 연락주세요.";
+		
+		//System.out.println(line.replace("010-2144-2541", "XXX-XXXX-XXXX").replace("010-5896-9854", "XXX-XXXX-XXXX"));
+		
+		System.out.println(line.replaceAll("[0-9]{3}-[0-9]{3,4}-[0-9]{4}", "XXX-XXXX-XXXX"));
+		
+		System.out.println(line.replaceFirst("[0-9]{3}-[0-9]{3,4}-[0-9]{4}", "XXX-XXXX-XXXX"));
+		
+		
+	}
+
+	private static void m4() {
+		
+		//회원 가입 > 사용자 입력 > 유효성 검사
+		//1. 이름 > 필수, 한글, 2~5자 이내
+		//2. 나이 > 필수, 숫자, 0~120세 이내
+		//3. 아이디 > 필수, 영어+숫자+_ 조합, 숫자 시작 불가능, 4~12자 이내
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("이름: ");
+		String name = scan.nextLine();
+		
+		System.out.print("나이: ");
+		int age = scan.nextInt();
+		scan.skip("\r\n");
+		
+		System.out.print("아이디: ");
+		String id = scan.nextLine();
+		
+		if (check(name, age, id)) {
+			System.out.println("가입 완료");
+		} else {
+			System.out.println("가입 실패");
+		}
+		
+	}
+
+	private static boolean check(String name, int age, String id) {
+		
+		String regex = "";
+		Pattern pattern = null;
+		Matcher matcher = null;
+		
+		//1. 이름 > 필수, 한글, 2~5자 이내
+		regex = "^[가-힣]{2,5}$";
+		pattern = Pattern.compile(regex);
+		matcher = pattern.matcher(name); //"홍길동"
+		
+		if (!matcher.find()) {
+			return false;
+		}
+		
+		
+		//2. 나이 > 필수, 숫자, 0~120세 이내
+		regex = "^[0-9]{1,3}$";
+		pattern = Pattern.compile(regex);
+		matcher = pattern.matcher(age + "");
+		
+		if (!(matcher.find() && (age >= 0 && age <= 120))) {
+			return false;
+		}
+		
+		
+		//3. 아이디 > 필수, 영어+숫자+_ 조합, 숫자 시작 불가능, 4~12자 이내
+		regex = "^[A-Za-z_][A-Za-z0-9_]{3,11}$";
+		pattern = Pattern.compile(regex);
+		matcher = pattern.matcher(id);
+		
+		if (!matcher.find()) {
+			return false;
+		}
+		
+		
+		return true;
+	}
 
 	private static void m3() {
 		
